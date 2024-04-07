@@ -1,0 +1,42 @@
+{
+  "name": "node-pathlib",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "An implementation of Python PEP 428, \"pathlib\" module, in Javascript using node APIs.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "standard",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arthurintelligence/node-pathlib.git"
+  },
+  "keywords": [
+    "pep-428",
+    "python",
+    "pathlib",
+    "purepath"
+  ],
+  "author": "Philippe Hebert <philippe@human.space>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arthurintelligence/node-pathlib/issues"
+  },
+  "homepage": "https://github.com/arthurintelligence/node-pathlib#readme",
+  "devDependencies": {
+    "@babel/core": "^7.24.4",
+    "@babel/preset-env": "^7.24.4",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0"
+  },
+  "jest": {
+    "rootDir": ".",
+    "roots": [
+      "<rootDir>"
+    ],
+    "modulePaths": [
+      "<rootDir>"
+    ]
+  }
+}
