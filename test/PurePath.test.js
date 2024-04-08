@@ -16,6 +16,13 @@ describe("PurePath", () => {
       expect(typeof path.path).toBe("string")
     })
 
+    test("accepts multiple path segments as argument, and assigns as string", () => {
+      const arg = ["/path/", "to/file.txt"]
+      const path = new PurePath(...arg)
+      expect(path.path).toBe("/path/to/file.txt")
+      expect(typeof path.path).toBe("string")
+    })
+
     test.each([
       ["Number", new Number(1)],
       ["Promise", new Promise(() => "/path/to/file.txt")],
@@ -102,6 +109,17 @@ describe("PurePath", () => {
     test.each([
       ["File with single extension", "/path/to/file.txt", "file"],
       ["File with multiple extensions", "/path/to/file.tar.gz", "file.tar"],
+      ["File starting with dot, without extension", "/path/to/.file", ".file"],
+      [
+        "File starting with dot, with single extension",
+        "/path/to/.file.txt",
+        ".file",
+      ],
+      [
+        "File starting with dot, with multiple extensions",
+        "/path/to/.file.tar.gz",
+        ".file.tar",
+      ],
       ["Directory", "/path/to/dir", "dir"],
       ["Root", "/", ""],
     ])("returns stem: %s", (casename, value, expected) => {
