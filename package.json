@@ -13,7 +13,7 @@
     "docs:generate": "npx jsdoc lib -r -c jsdoc.json -R README.md -d docs",
     "docs:serve": "npx serve -l 3000 ./docs",
     "lint:check": "npx eslint lib test --report-unused-disable-directives --max-warnings 0",
-    "lint:fix": "npx eslint lib test --report-unused-disable-directives --max-warnings 0 --fix",
+    "lint:fix": "npx eslint lib test --report-unused-disable-directives --max-warnings 0 --fix --no-warn-ignored",
     "prettier:check": "npx prettier --check lib test",
     "prettier:fix": "npx prettier --write lib test",
     "test:unit": "npx jest",
@@ -61,6 +61,6 @@
     ]
   },
   "lint-staged": {
-    "**/*": "npm run format"
+    "(lib|test)/*.js": "npm run format"
   }
 }
