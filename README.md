@@ -1,2 +1,3 @@
 # node-pathlib
-An implementation of Python PEP 428, "pathlib" module, in Javascript using node APIs.
+
+A port of Python PEP 428, \"pathlib\" module, to node.
