@@ -33,10 +33,10 @@ describe("PurePath", () => {
         expect(() => new PurePath(value)).toThrow(
           new TypeError(
             `Invalid type for argument path. ` +
-              `Expected one of (string, PurePath), got ${value.constructor.name}`
-          )
+              `Expected one of (string, PurePath), got ${value.constructor.name}`,
+          ),
         )
-      }
+      },
     )
   })
 
@@ -50,7 +50,7 @@ describe("PurePath", () => {
       (casename, value, expected) => {
         const path = new PurePath(value)
         expect(path.name).toBe(expected)
-      }
+      },
     )
   })
 
@@ -101,7 +101,7 @@ describe("PurePath", () => {
           console.log({ casename, value, asserted, expected })
           throw e
         }
-      }
+      },
     )
   })
 
@@ -220,7 +220,7 @@ describe("PurePath", () => {
           console.log({ casename, value, asserted, expected })
           throw e
         }
-      }
+      },
     )
   })
 
@@ -284,7 +284,7 @@ describe("PurePath", () => {
         } catch (e) {
           expect(e).toStrictEqual(expected)
         }
-      }
+      },
     )
   })
 
@@ -295,7 +295,7 @@ describe("PurePath", () => {
     ])("rejects invalid suffix: %s", (casename, suffix) => {
       const path = new PurePath("/path/to/file.txt")
       expect(() => path.withSuffix(suffix)).toThrow(
-        new Error(`Invalid suffix '${suffix}'`)
+        new Error(`Invalid suffix '${suffix}'`),
       )
     })
 
@@ -337,7 +337,7 @@ describe("PurePath", () => {
         } catch (e) {
           expect(e).toStrictEqual(expected)
         }
-      }
+      },
     )
   })
 
@@ -411,7 +411,7 @@ describe("PurePath", () => {
         } catch (e) {
           expect(e).toStrictEqual(expected)
         }
-      }
+      },
     )
   })
 
