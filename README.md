@@ -4,13 +4,13 @@
 
 <p>
   <a href="https://github.com/arthurintelligence/node-pathlib/">
-    <img alt="SemVer" src="https://github.com/arthurintelligence/node-pathlib/tree/main/docs/badges/semver.svg">
+    <img alt="SemVer" src="docs/badges/semver.svg">
   </a>
   <a href="https://github.com/arthurintelligence/node-pathlib/">
-    <img alt="Engine/Node Support" src="https://github.com/arthurintelligence/node-pathlib/tree/main/docs/badges/node-version.svg">
+    <img alt="Engine/Node Support" src="docs/badges/node-version.svg">
   </a>
   <a href="https://arthurintelligence.github.io/node-pathlib/lcov-report">
-    <img alt="Code coverage: Lines" src="https://arthurintelligence.github.io/node-pathlib/badges/badge-line.svg">
+    <img alt="Code coverage: Lines" src="docs/badges/badge-lines.svg">
   </a>
   <a href="https://github.com/arthurintelligence/node-pathlib/LICENSE">
     <img alt="License: MIT" src="https://img.shields.io/github/license/arthurintelligence/node-pathlib">
