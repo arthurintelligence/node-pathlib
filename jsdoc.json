@@ -17,6 +17,12 @@
         "target": "_blank",
         "class": "menu-item",
         "id": "repository"
+      },
+      "Code coverage report": {
+        "href": "https://arthurintelligence.github.io/node-pathlib/lcov-report",
+        "target": "_blank",
+        "class": "menu-item",
+        "id": "repository"
       }
     }
   },

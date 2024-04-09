@@ -80,6 +80,13 @@ describe("PurePath", () => {
       }
     })
 
+    test("caches parts", () => {
+      const path = new PurePath("/path/to/file.txt")
+      const asserted = path.parts
+      const expected = path.parts
+      expect(asserted).toBe(expected)
+    })
+
     test.each([
       ["File", "/path/to/file.txt", ["/", "path", "to", "file.txt"]],
       ["Directory", "/path/to/dir", ["/", "path", "to", "dir"]],
@@ -280,6 +287,54 @@ describe("PurePath", () => {
         const pathObj = new PurePath(path)
         try {
           const asserted = pathObj.withName(name).toString()
+          expect(asserted).toStrictEqual(expected)
+        } catch (e) {
+          expect(e).toStrictEqual(expected)
+        }
+      },
+    )
+  })
+
+  describe("withStem", () => {
+    test.each([
+      [
+        "File with single extension",
+        ["/path/to/file.txt", "config"],
+        "/path/to/config.txt",
+      ],
+      [
+        "File with multiple extensions",
+        ["/path/to/file.tar.gz", "config"],
+        "/path/to/config.gz",
+      ],
+      [
+        "File starting with dot, no extension",
+        ["/path/to/.file", "env"],
+        "/path/to/env",
+      ],
+      [
+        "File starting with dot, no extension; stem prefixed with dot",
+        ["/path/to/.file", ".env"],
+        "/path/to/.env",
+      ],
+      [
+        "File starting with dot, single extension",
+        ["/path/to/.file.txt", "env"],
+        "/path/to/env.txt",
+      ],
+      [
+        "File starting with dot, multiple extensions",
+        ["/path/to/.file.tar.gz", "env"],
+        "/path/to/env.gz",
+      ],
+      ["Directory", ["/path/to/dir", "file"], "/path/to/file"],
+      ["Root", ["/", ".txt"], new Error(`PurePath('/') has an empty stem`)],
+    ])(
+      "returns a new instance with proper name: %s",
+      (casename, [path, stem], expected) => {
+        const pathObj = new PurePath(path)
+        try {
+          const asserted = pathObj.withStem(stem).toString()
           expect(asserted).toStrictEqual(expected)
         } catch (e) {
           expect(e).toStrictEqual(expected)
