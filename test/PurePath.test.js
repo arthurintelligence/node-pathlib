@@ -244,6 +244,12 @@ describe("PurePath", () => {
       expect(path.toString()).toBe("/path/to/dir/file.txt")
     })
 
+    test("joins relative paths correctly (1)", () => {
+      const basePath = new PurePath("/path/to/dir")
+      const path = basePath.join("..", "file.txt")
+      expect(path.toString()).toBe("/path/to/file.txt")
+    })
+
     test("supports PurePath as arguments", () => {
       const basePath = new PurePath("/path/to")
       const path = basePath.join(new PurePath("dir"))
