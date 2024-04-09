@@ -1,6 +1,6 @@
 {
   "name": "node-pathlib",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A port of Python PEP 428, \"pathlib\" module, to node",
   "type": "module",
   "main": "lib/index.js",
@@ -26,6 +26,9 @@
     "type": "git",
     "url": "git+https://github.com/arthurintelligence/node-pathlib.git"
   },
+  "files": [
+    "lib"
+  ],
   "keywords": [
     "pep-428",
     "python",
