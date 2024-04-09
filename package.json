@@ -1,6 +1,6 @@
 {
   "name": "node-pathlib",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A port of Python PEP 428, \"pathlib\" module, to node",
   "type": "module",
   "main": "lib/index.js",
